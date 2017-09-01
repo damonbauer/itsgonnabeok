@@ -6,7 +6,8 @@
 	var otherThings = [
 		'Ethereum is going up',
 		'Carbs',
-		'Brown Bean Water'
+		'Brown Bean Water',
+		'You are alive at the same time as Beyonce'
 	];
 
 	pickAThing();

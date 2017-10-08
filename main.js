@@ -1,4 +1,3 @@
-
 (function() {
 	var $moreButton = document.getElementById('more');
 	var $theThing = document.getElementById('theThing');
@@ -14,7 +13,7 @@
 		'No one else has it figured out either',
 		'We have each other',
 		'It’s amazing what you can do, if you just bother',
-		'People are overwhelmingly good ',
+		'People are overwhelmingly good',
 		'You can do anything, but it’s up to you',
 		'Hug someone',
 		'It’s always nice to high five someone',
@@ -26,21 +25,20 @@
 
 	pickAThing();
 
-	$moreButton.addEventListener('click', pickAThing);
+	$moreButton.addEventListener('click', function() {
+		$theThing.classList.add('is-hidden');
+
+		setTimeout(function() {
+			pickAThing();
+			$theThing.classList.remove('is-hidden');
+		}, 250);
+	});
 
 	function pickAThing() {
 		var curContent = $theThing.textContent;
 
 		while(curContent === $theThing.textContent || prevContent === $theThing.textContent) {
-			// $theThing.classList.add('is-hidden');
-			
-			// setTimeout(function() {
-				$theThing.textContent = otherThings[Math.floor(Math.random() * otherThings.length)];				
-			// }, 250);
-
-			// setTimeout(function() {
-			// 	$theThing.classList.remove('is-hidden');
-			// }, 250);
+			$theThing.textContent = otherThings[Math.floor(Math.random() * otherThings.length)];
 		}
 
 		prevContent = curContent;

@@ -7,7 +7,10 @@ body {
     border-left: 30px solid;
     border-right: 30px solid;
     text-align: center;
-    font-family: Baloo, 'cursive';
+    font-family: 'Droid Serif', serif;
+    border-left-color: #81BBEA;
+    border-right-color: #81BBEA;
+    background-color: #81BBEA;
 }
 	body:before, body:after {
 	    content: "";
@@ -15,6 +18,7 @@ body {
 	    left: 0;
 	    right: 0;
 	    height: 30px;
+      background-color: #81BBEA;
 	}
 
 	body:before {
@@ -28,6 +32,7 @@ body {
 .wrapper {
 	width: 100%;
 	height: 100%;
+  background: url('pattern.png') top left repeat;
 }
 
 main {
@@ -46,10 +51,16 @@ main {
 }
 
 #theThing {
-	margin-top: 1rem;
+	margin: 1rem 3rem;
 	line-height: 1.2;
 	font-size: 3.2rem;
+  color: #293949;
+  opacity: 1;
+  transition: opacity 0.25s;
 }
+  #theThing.is-hidden {
+    opacity: 0;
+  }
 
 #more {
 	cursor: pointer;
@@ -58,21 +69,32 @@ main {
 	border: 0;
 	border-radius: 6px;
 	padding: 0.5rem 2rem;
-	font-family: Baloo, 'cursive';
+	font-family: 'Open Sans', sans-serif;
 	font-size: 1rem;
 	transition: background-color ease 0.2s;
+  color: #FFFFFF;
+  background-color: #293949;
 }
+  #more:hover {
+    background-color: #222;
+  }
+
+  #more:active {
+    background-color: #181818;  
+  }
 
 footer {
 	position: absolute;
-    bottom: -25px;
-    left: 40px;
-    z-index: 1;
-    font-size: 0.75rem;
+  bottom: -25px;
+  left: 40px;
+  z-index: 1;
+  font-size: 0.75rem;
+  color: #293949;
 }
 	footer a {
 		text-decoration: none;
-    }
+    color: #293949;
+  }
 
     footer a:first-of-type {
     	margin-right: 5px;
